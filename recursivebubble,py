@@ -1,0 +1,26 @@
+def recursive_bubble_sort(arr, n):
+    # Base case: if array size is 1, it's sorted
+    if n == 1:
+        return
+
+    # Perform one pass of bubble sort
+    for j in range(n - 1):
+        if arr[j] > arr[j + 1]:
+            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+    # Recursive call for the remaining array
+    recursive_bubble_sort(arr, n - 1)
+
+# Input array from user
+n = int(input("Enter the size: "))
+arr = []
+print("Enter array elements:")
+for i in range(n):
+    element = int(input())
+    arr.append(element)
+
+# Call the recursive bubble sort function
+recursive_bubble_sort(arr, n)
+
+# Print the sorted array
+print("Sorted array:", arr)
